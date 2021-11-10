@@ -1,6 +1,6 @@
 /**
-* Template Name: OnePage - v2.2.2
-* Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
+* Template Name: Arsha - v2.3.1
+* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -25,7 +25,6 @@
         e.preventDefault();
 
         var scrollto = target.offset().top - scrolltoOffset;
-
         if ($(this).attr("href") == '#header') {
           scrollto = 0;
         }
@@ -49,7 +48,7 @@
     }
   });
 
-  // Activate smooth scroll on page load with hash links in the url
+  // Activate smooth scroll on page load with hash links
   $(document).ready(function() {
     if (window.location.hash) {
       var initial_nav = window.location.hash;
@@ -149,28 +148,13 @@
     return false;
   });
 
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
-
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      900: {
-        items: 3
-      }
-    }
+  // Skills section
+  $('.skills-content').waypoint(function() {
+    $('.progress .progress-bar').each(function() {
+      $(this).css("width", $(this).attr("aria-valuenow") + '%');
+    });
+  }, {
+    offset: '80%'
   });
 
   // Porfolio isotope and filter
